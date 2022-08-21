@@ -1,0 +1,118 @@
+Master THEORM :
+
+    T(n) = aT(n/b) + Theta(n^k (logn)^p)
+
+
+Case1 : a > b^k
+  T(n) = Theta(n^(loga base b))
+
+Case2 : a = b^k
+  a. p > -1 :  theta(n^loga base b * (logn)^(p+1))
+  b. p = -1 :  theta(n^loga base b * loglogn)
+  c. p < -1 :  theta(n^loga base b)
+
+Case3 : a < b^k
+  a. p >= 0 : theta(n^k * (logn) ^ p)
+  b. p < 0 :  theta(n^k)
+
+Theta is combination of O and omega, i.e. best and worst time complexity
+
+Examples
+1. T(n) = 4T(n/2) + n^2
+a= 4
+b =2
+k=2
+p =0
+
+a =4, b^k = 4
+
+Theta(n^log4 base 2 * logn) => n^2 * logn
+
+2. T(n) = T(n/2) + n^2
+
+a= 1
+b = 2
+k=2
+p=0
+
+a =1 b^k = 4
+theta(n^2 * (logn) ^ 0) => Theta(n^2 * 1) => Theta(n^2)
+
+3. T(n) = 16T(n/4) + n
+
+
+a= 16
+b = 4
+k=1
+p=0
+
+a =16 b^k = 4
+
+Theta(n^(log16 base 4)) = Theta(n^2)
+
+4. T(n) = 2T(n/2)+n*logn 
+a= 2
+b = 2
+k=1
+p=1
+
+a =2 b^k = 2
+
+theta(n^log2 base 2 * (logn)^2) => Theta(n* logn^2)
+
+5. T(n) = 6T(n/3)+n^2 * logn 
+
+a= 6
+b = 3
+k=2
+p=1
+
+a =6 b^k = 9
+
+theta(n^2 * (logn) ^ 1) => theta(n^2 * logn)
+
+6. T(n) = 2T(n/3)+n^2 
+
+a= 2
+b = 3
+k=2
+p=0
+
+a =2 b^k = 9
+theta(n^2 * (logn) ^ 0) => theta(n^2)
+
+7. T(n) = 3T(n/3)+ squareroot(n)
+3T(n/3)+ 2^1/2
+a= 3
+b = 3
+k=1/2
+p=0
+
+a =3 b^k = 3^1/2 = 1.5
+
+Theta(n^(log3 base 3)) => Theta(n^1) => Theta(n)
+
+8. T(n) = 3T(n/4)+ nlogn
+
+a= 3
+b = 4
+k=1
+p=1
+
+a =3 b^k = 4
+
+theta(n^1 * (logn) ^ 1) => Theta(nlogn)
+
+
+
+O(1) + T(n/2) + T(n/2) =>  2T(n/2) + O(1)
+
+a= 2
+b=2
+k=0
+p=0
+
+a=2 b^k = 1
+Theta(n^(log2 base 2)) => Theta(n)
+
+
