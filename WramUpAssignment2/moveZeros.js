@@ -6,6 +6,19 @@ const moveZeroes = function (nums) {
     }
 };
 
+// more optimized solution
+const moveZeroes12 = function (arr, n) {
+    let j = 0;
+    for (let i = 0; i < n; i++) {
+        if (arr[i] !== 0) {
+            arr[j++] = arr[i];
+        }
+    }
+    while (j < n) {
+        arr[j++] = 0;
+    }
+};
+
 const moveZeroes1 = moveZeroes([0, 1, 0, 3, 12]);
 console.log('moveZeroes1:', moveZeroes1);
 
