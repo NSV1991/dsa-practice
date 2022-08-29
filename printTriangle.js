@@ -1,15 +1,31 @@
 class Solution {
-    printTriangle(noOfRows) {
-        let row = '';
+    printStarTriangle(noOfRows) {
+        let str = '';
         for (let i = 0; i < noOfRows; i++) {
-            for (let index = noOfRows; index > 0; index--) {
-                row = row + '*';
-                // console.log('\n');
+            for (let j = 0; j < noOfRows - i; j++) {
+                str += '*';
             }
+            str += '\n';
         }
-        console.log('row:', row);
+        console.log(str);
+    }
+
+    printNumberTriangle(noOfRows) {
+        let num = 1;
+        for (let i = 0; i < noOfRows; i++) {
+            let str = '';
+            for (let j = 0; j < i + 1; j++) {
+                // str += '*';
+                str = str + num;
+                num++;
+            }
+            console.log(str);
+            // str += '\n';
+            console.log('\n');
+        }
     }
 }
 
 const solution = new Solution();
-solution.printTriangle(5);
+solution.printStarTriangle(5);
+solution.printNumberTriangle(4);
